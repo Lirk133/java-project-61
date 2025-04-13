@@ -49,4 +49,26 @@ public class Engine {
         System.out.printf("Congratulations, %s!", Cli.nameGamer);
         System.out.println();
     }
+
+    public static int gcd(int number1, int number2) {
+        int result;
+        if (number1 >= number2) {
+            result = gcdLogic(number1, number2);
+        } else {
+            result = gcdLogic(number2, number1);
+        }
+        return result;
+    }
+
+    private static int gcdLogic(int number1, int number2) {
+        int result = 0;
+        int isGCD = number1 / 2;
+        while (isGCD != 0 && result == 0) {
+            if (number1 % isGCD == 0 && number2 % isGCD == 0) {
+                result = isGCD;
+            }
+            isGCD--;
+        }
+        return result;
+    }
 }

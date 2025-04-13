@@ -19,7 +19,9 @@ public class Even {
 
             //сравнение ответа игрока с правильным ответом
             boolean playing = Engine.isCorrectly(answer, correctly);
-            if (!playing) return;
+            if (!playing) {
+                return;
+            }
         }
 
         //поздравление с удачно пройденной игрой

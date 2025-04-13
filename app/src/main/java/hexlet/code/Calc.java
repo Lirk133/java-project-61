@@ -38,7 +38,9 @@ public class Calc {
             String answer = Engine.question(question);
             //проверяем ответ
             boolean playing = Engine.isCorrectly(answer, correctly);
-            if (!playing) return;
+            if (!playing) {
+                return;
+            }
         }
 
         //поздравляем с победой

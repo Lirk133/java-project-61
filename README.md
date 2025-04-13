@@ -13,3 +13,4 @@
 
 game Even demo: https://asciinema.org/a/HqiuiPBxqoBwcthQXq6ZdtgC0
 game Calc demo: https://asciinema.org/a/vWVoo7PWpOJufTT3IfgbAqMpn
+game GCD demo: https://asciinema.org/a/B4Ci62NCrCrnuxzio1Cl3sKyQ

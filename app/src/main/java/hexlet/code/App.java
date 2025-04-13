@@ -27,6 +27,9 @@ public class App {
                 case "3":
                     Calc.gameCalc();
                     break;
+                case "4":
+                    GCD.gameGCD();
+                    break;
                 case "0":
                     System.exit(0);
                     break;
