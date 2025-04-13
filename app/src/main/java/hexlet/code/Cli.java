@@ -13,8 +13,7 @@ public class Cli {
         System.out.print("May I have your name? ");
 
         //задаётся имя игрока и запоминается на постоянку
-        String nameGamer = scannerString();
-        Cli.nameGamer = nameGamer;
+        nameGamer = scannerString();
         System.out.println("Hello, " + nameGamer + "!");
     }
 
