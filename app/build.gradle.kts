@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("com.github.ben-manes.versions") version "0.52.0"
+    id("org.sonarqube") version "6.0.1.5171"
     application
     checkstyle
 }
@@ -31,4 +32,12 @@ tasks.getByName("run", JavaExec::class) {
 
 checkstyle {
     toolVersion = "10.3.3"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "Lirk133_java-project-61")
+        property("sonar.organization", "lirk133")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }

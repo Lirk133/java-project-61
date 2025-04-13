@@ -1,25 +1,26 @@
-package hexlet.code;
+package hexlet.code.games;
 
-public class GCD {
+import hexlet.code.Cli;
+import hexlet.code.Engine;
 
-    //Игра наибольший общий делитель
-    public static void gameGCD() {
+public class Prime {
+
+    public static void gamePrime() {
         //приветствие и объяснение правил
         Cli.startGame();
-        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         //начало раундов
         for (int i = 0; i < 3; i++) {
 
-            //задаём случайные два числа
-            int number1 = Engine.random(100);
-            int number2 = Engine.random(100);
+            //задаём случайные шаг для прогрессии
+            int number = Engine.random(100);
 
-            //определяем наибольший общий делитель
-            String correctly = Integer.toString(Engine.gcd(number1, number2));
+            //определяем является ли число простым
+            String correctly = Engine.primeCheck(number);
 
             //создаём строку для вопроса
-            String question = number1 + " " + number2;
+            String question = Integer.toString(number);
             //задаём вопрос и получаем ответ
             String answer = Engine.question(question);
             //проверяем ответ
