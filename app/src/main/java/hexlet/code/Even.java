@@ -18,7 +18,8 @@ public class Even {
             String answer = Engine.question(Integer.toString(number));
 
             //сравнение ответа игрока с правильным ответом
-            Engine.isCorrectly(answer, correctly);
+            boolean playing = Engine.isCorrectly(answer, correctly);
+            if (!playing) return;
         }
 
         //поздравление с удачно пройденной игрой

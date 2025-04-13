@@ -33,15 +33,15 @@ public class Engine {
     }
 
     //метод проверки вопроса и ответа
-    public static void isCorrectly(String answer, String correctly) {
+    public static boolean isCorrectly(String answer, String correctly) {
         boolean isCorrectly = answer.equals(correctly);
         if (isCorrectly) {
             System.out.println("Correct!");
-        } else {
-            System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", answer, correctly);
-            System.out.println();
-            System.exit(0);
+            return true;
         }
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", answer, correctly);
+        System.out.println();
+        return false;
     }
 
     //победа игрока
