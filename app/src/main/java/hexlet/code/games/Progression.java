@@ -10,23 +10,17 @@ public class Progression {
         Cli.startGame();
         System.out.println("What number is missing in the progression?");
 
-        int round = 3;
-        int numberLast = 10;
-        int numberFirstStep1 = 2;
-        int numberFirstStep2 = 0;
-        int randomFirstNumber = 20;
-        int massiveLength = 10;
         //начало раундов
-        for (int i = 0; i < round; i++) {
+        for (int i = 0; i < Engine.getRound(); i++) {
 
             //задаём случайные шаг для прогрессии
-            int step = Engine.random(numberFirstStep1, numberLast);
+            int step = Engine.random(Engine.getNumberFirstStep1(), Engine.getNumberLast());
             //запоминаем какую позицию в прогрессии скрыть
-            int hiddenNumber = Engine.random(numberFirstStep2, numberLast);
+            int hiddenNumber = Engine.random(Engine.getNumberFirstStep2(), Engine.getNumberLast());
             //определяем первое число в прогрессии
-            int firstNumber = Engine.random(randomFirstNumber);
+            int firstNumber = Engine.random(Engine.getRandomFirstNumber());
             //создаём массив прогрессии
-            int[] numbers = new int[massiveLength];
+            int[] numbers = new int[Engine.getMassiveLength()];
             Engine.massiveProgression(numbers, firstNumber, step);
 
             //определяем скрытое число в строку

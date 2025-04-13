@@ -11,12 +11,10 @@ public class Even {
         Cli.startGame();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        int round = 3;
-        int randomMax = 100;
         //начало раундов
-        for (int i = 0; i < round; i++) {
+        for (int i = 0; i < Engine.getRound(); i++) {
             //генерация случайного числа и определение его как чётное или не чётное
-            int number = Engine.random(randomMax);
+            int number = Engine.random(Engine.getRandomMaxNumber());
             String correctly = Engine.numberCheck(number);
 
             //получение ответа от игрока

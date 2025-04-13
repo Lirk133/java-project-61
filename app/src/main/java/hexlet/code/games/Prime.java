@@ -10,13 +10,11 @@ public class Prime {
         Cli.startGame();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        int round = 3;
-        int randomMax = 100;
         //начало раундов
-        for (int i = 0; i < round; i++) {
+        for (int i = 0; i < Engine.getRound(); i++) {
 
             //задаём случайные шаг для прогрессии
-            int number = Engine.random(randomMax);
+            int number = Engine.random(Engine.getRandomMaxNumber());
 
             //определяем является ли число простым
             String correctly = Engine.primeCheck(number);

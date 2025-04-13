@@ -5,6 +5,47 @@ import java.util.Random;
 
 public class Engine {
 
+    private static final int round = 3;
+    private static final int randomMaxNumber = 100;
+    private static final int randomMaxSigns = 3;
+    private static final int numberLast = 10;
+    private static final int numberFirstStep1 = 2;
+    private static final int numberFirstStep2 = 0;
+    private static final int randomFirstNumber = 20;
+    private static final int massiveLength = 10;
+
+    public static int getRound() {
+        return round;
+    }
+
+    public static int getRandomMaxNumber() {
+        return randomMaxNumber;
+    }
+
+    public static int getRandomMaxSigns() {
+        return randomMaxSigns;
+    }
+
+    public static int getNumberLast() {
+        return numberLast;
+    }
+
+    public static int getNumberFirstStep1() {
+        return numberFirstStep1;
+    }
+
+    public static int getNumberFirstStep2() {
+        return numberFirstStep2;
+    }
+
+    public static int getRandomFirstNumber() {
+        return randomFirstNumber;
+    }
+
+    public static int getMassiveLength() {
+        return massiveLength;
+    }
+
     //упрощённый сканер текста для быстрого написания
     public static String scannerString() {
         return new Scanner(System.in).nextLine();
