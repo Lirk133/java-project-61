@@ -5,14 +5,14 @@ import java.util.Random;
 
 public class Engine {
 
-    private static final int round = 3;
-    private static final int randomMaxNumber = 100;
-    private static final int randomMaxSigns = 3;
-    private static final int numberLast = 10;
-    private static final int numberFirstStep1 = 2;
-    private static final int numberFirstStep2 = 0;
-    private static final int randomFirstNumber = 20;
-    private static final int massiveLength = 10;
+    private static int round = 3;
+    private static int randomMaxNumber = 100;
+    private static int randomMaxSigns = 3;
+    private static int numberLast = 10;
+    private static int numberFirstStep1 = 2;
+    private static int numberFirstStep2 = 0;
+    private static int randomFirstNumber = 20;
+    private static int massiveLength = 10;
 
     public static int getRound() {
         return round;
@@ -69,9 +69,9 @@ public class Engine {
         return random(1, number);
     }
 
-    public static int random(int numberFirstStep, int numberLast) {
+    public static int random(int numberFirstStep, int numberLength) {
         Random rnd = new Random();
-        int result = rnd.nextInt(numberLast);
+        int result = rnd.nextInt(numberLength);
         if (result < numberFirstStep) {
             result += numberFirstStep;
         }

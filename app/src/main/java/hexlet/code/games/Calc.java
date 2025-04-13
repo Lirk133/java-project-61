@@ -19,16 +19,16 @@ public class Calc {
 
             //задаём случайный математический знак и делаем верный подсчёт
             String mathSign = "";
-            String correctly = switch (Engine.random(Engine.getRandomMaxSigns())) {
-                case 1 -> {
+            String correctly = switch (Integer.toString(Engine.random(Engine.getRandomMaxSigns()))) {
+                case "1" -> {
                     mathSign = "+";
                     yield Integer.toString(number1 + number2);
                 }
-                case 2 -> {
+                case "2" -> {
                     mathSign = "-";
                     yield Integer.toString(number1 - number2);
                 }
-                case 3 -> {
+                case "3" -> {
                     mathSign = "*";
                     yield Integer.toString(number1 * number2);
                 }
