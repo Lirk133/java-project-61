@@ -46,17 +46,17 @@ public class Engine {
             System.out.println("Correct!");
             return true;
         }
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", answer, correctly);
-        System.out.println();
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctly);
+        System.out.printf("Let's try again, %s!\n", Cli.nameGamer);
         return false;
     }
 
     //победа игрока
     public static void winner() {
-        System.out.printf("Congratulations, %s!", Cli.nameGamer);
-        System.out.println();
+        System.out.printf("Congratulations, %s!\n", Cli.nameGamer);
     }
 
+    //метод определяет какое из двух чисел большее и запускает логику наибольшего общего делителя
     public static int gcd(int number1, int number2) {
         int result;
         if (number1 >= number2) {
@@ -67,6 +67,7 @@ public class Engine {
         return result;
     }
 
+    //логика нахождения наибольшего общего делителя
     private static int gcdLogic(int number1, int number2) {
         int result = 0;
         int isGCD = number1 / 2;
@@ -79,6 +80,7 @@ public class Engine {
         return result;
     }
 
+    //задаёт в массиве элементы, начиная с первого и с определённым шагом
     public static void massiveProgression(int[] numbers, int first, int step) {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = first;
@@ -86,6 +88,7 @@ public class Engine {
         }
     }
 
+    //преобразует массив в строку, скрывая определённую позицию
     public static String massiveInStringProgression(int[] numbers, int position) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < numbers.length; i++) {
@@ -96,5 +99,18 @@ public class Engine {
             }
         }
         return result.toString();
+    }
+
+    public static String primeCheck(int number) {
+        String result = "yes";
+        int numberSecond = 2;
+        while (numberSecond < number) {
+            if (numberCheck(number, numberSecond).equals("yes")) {
+                result = "no";
+                break;
+            }
+            numberSecond++;
+        }
+        return result;
     }
 }

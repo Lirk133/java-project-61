@@ -13,6 +13,7 @@ public class App {
                     3 - Calc
                     4 - GCD
                     5 - Progression
+                    6 - Prime
                     0 - Exit
                     Your choice:\s""");
 
@@ -33,6 +34,9 @@ public class App {
                     break;
                 case "5":
                     Progression.gameProgression();
+                    break;
+                case "6":
+                    Prime.gamePrime();
                     break;
                 case "0":
                     System.exit(0);

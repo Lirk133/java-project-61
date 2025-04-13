@@ -15,3 +15,4 @@ game Even demo: https://asciinema.org/a/HqiuiPBxqoBwcthQXq6ZdtgC0
 game Calc demo: https://asciinema.org/a/vWVoo7PWpOJufTT3IfgbAqMpn
 game GCD demo: https://asciinema.org/a/B4Ci62NCrCrnuxzio1Cl3sKyQ
 game Progression demo: https://asciinema.org/a/CVpApHf6cAOrn2lrZyd8soDMZ
+game Prime demo: https://asciinema.org/a/zI6n53pc5HXv236wl1EaUceZE
