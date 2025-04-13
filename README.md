@@ -12,3 +12,4 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
 
 game Even demo: https://asciinema.org/a/HqiuiPBxqoBwcthQXq6ZdtgC0
+game Calc demo: https://asciinema.org/a/vWVoo7PWpOJufTT3IfgbAqMpn

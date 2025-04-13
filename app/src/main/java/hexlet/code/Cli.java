@@ -1,5 +1,4 @@
 package hexlet.code;
-import java.util.Scanner;
 
 public class Cli {
     //имя игрока
@@ -13,13 +12,7 @@ public class Cli {
         System.out.print("May I have your name? ");
 
         //задаётся имя игрока и запоминается на постоянку
-        nameGamer = scannerString();
+        nameGamer = Engine.scannerString();
         System.out.println("Hello, " + nameGamer + "!");
     }
-
-    //упрощённый сканер текста для быстрого написания
-    public static String scannerString() {
-        return new Scanner(System.in).nextLine();
-    }
-
 }
