@@ -4,11 +4,25 @@ package hexlet.code;
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
+        //основное меню выбора игры
+        System.out.print("""
+                Please enter the game number and press Enter.
+                1 - Greet
+                2 - Even
+                0 - Exit
+                Your choice:\s""");
 
-        String nameGamer = Cli.scannerString();
+        String choiceGame = Cli.scannerString();
 
-        System.out.println("Hello, " + nameGamer + "!");
+        switch (choiceGame) {
+            case "1":
+                Cli.startGame();
+            case "2":
+                Even.gameEven();
+            case "0":
+            default:
+        }
+
+
     }
 }
