@@ -10,6 +10,10 @@ public class Engine {
         return new Scanner(System.in).nextLine();
     }
 
+    //метод проверки ответа (yes - верный ответ, no - не верный ответ)
+    public static String numberCheck(int number) {
+        return numberCheck(number, 2);
+    }
 
     //метод проверки ответа (yes - верный ответ, no - не верный ответ)
     public static String numberCheck(int number1, int number2) {
@@ -47,13 +51,13 @@ public class Engine {
             return true;
         }
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctly);
-        System.out.printf("Let's try again, %s!\n", Cli.nameGamer);
+        System.out.printf("Let's try again, %s!\n", Cli.getNameGamer());
         return false;
     }
 
     //победа игрока
     public static void winner() {
-        System.out.printf("Congratulations, %s!\n", Cli.nameGamer);
+        System.out.printf("Congratulations, %s!\n", Cli.getNameGamer());
     }
 
     //метод определяет какое из двух чисел большее и запускает логику наибольшего общего делителя

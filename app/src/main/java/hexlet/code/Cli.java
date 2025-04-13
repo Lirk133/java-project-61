@@ -2,7 +2,7 @@ package hexlet.code;
 
 public class Cli {
     //имя игрока
-    public static String nameGamer;
+    private static String nameGamer;
 
     //основное приветствие
     public static void startGame() {
@@ -14,5 +14,9 @@ public class Cli {
         //задаётся имя игрока и запоминается на постоянку
         nameGamer = Engine.scannerString();
         System.out.println("Hello, " + nameGamer + "!");
+    }
+
+    public static String getNameGamer() {
+        return nameGamer;
     }
 }

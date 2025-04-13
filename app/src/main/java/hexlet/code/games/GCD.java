@@ -11,12 +11,14 @@ public class GCD {
         Cli.startGame();
         System.out.println("Find the greatest common divisor of given numbers.");
 
+        int randomMax = 100;
+        int round = 3;
         //начало раундов
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < round; i++) {
 
             //задаём случайные два числа
-            int number1 = Engine.random(100);
-            int number2 = Engine.random(100);
+            int number1 = Engine.random(randomMax);
+            int number2 = Engine.random(randomMax);
 
             //определяем наибольший общий делитель
             String correctly = Integer.toString(Engine.gcd(number1, number2));

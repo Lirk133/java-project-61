@@ -10,16 +10,19 @@ public class Calc {
         Cli.startGame();
         System.out.println("What is the result of the expression?");
 
+        int randomMaxNumber = 100;
+        int randomMaxSigns = 3;
+        int round = 3;
         //начало раундов
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < round; i++) {
 
             //задаём случайные два числа
-            int number1 = Engine.random(100);
-            int number2 = Engine.random(100);
+            int number1 = Engine.random(randomMaxNumber);
+            int number2 = Engine.random(randomMaxNumber);
 
             //задаём случайный математический знак и делаем верный подсчёт
             String mathSign = "";
-            String correctly = switch (Engine.random(3)) {
+            String correctly = switch (Engine.random(randomMaxSigns)) {
                 case 1 -> {
                     mathSign = "+";
                     yield Integer.toString(number1 + number2);
