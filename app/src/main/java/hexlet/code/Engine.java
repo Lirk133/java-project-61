@@ -21,8 +21,15 @@ public class Engine {
 
     //метод рандома от 1 до 100
     public static int random(int number) {
+        return random(1, number);
+    }
+
+    public static int random(int numberFirstStep, int numberLast) {
         Random rnd = new Random();
-        int result = rnd.nextInt(number) + 1;
+        int result = rnd.nextInt(numberLast);
+        if (result < numberFirstStep) {
+            result += numberFirstStep;
+        }
         return result;
     }
 
@@ -70,5 +77,24 @@ public class Engine {
             isGCD--;
         }
         return result;
+    }
+
+    public static void massiveProgression(int[] numbers, int first, int step) {
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = first;
+            first += step;
+        }
+    }
+
+    public static String massiveInStringProgression(int[] numbers, int position) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < numbers.length; i++) {
+            if (i != position) {
+                result.append(numbers[i]).append(" ");
+            } else {
+                result.append(".. ");
+            }
+        }
+        return result.toString();
     }
 }

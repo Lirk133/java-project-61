@@ -12,6 +12,7 @@ public class App {
                     2 - Even
                     3 - Calc
                     4 - GCD
+                    5 - Progression
                     0 - Exit
                     Your choice:\s""");
 
@@ -29,6 +30,9 @@ public class App {
                     break;
                 case "4":
                     GCD.gameGCD();
+                    break;
+                case "5":
+                    Progression.gameProgression();
                     break;
                 case "0":
                     System.exit(0);
