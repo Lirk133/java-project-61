@@ -150,7 +150,7 @@ public class Engine {
         String result = "yes";
         int numberSecond = 2;
         while (numberSecond < number) {
-            if (numberCheck(number, numberSecond).equals("yes")) {
+            if (number % numberSecond == 0) {
                 result = "no";
                 break;
             }
