@@ -4,15 +4,9 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Lirk133_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Lirk133_java-project-61)
 
-game Even demo: https://asciinema.org/a/HqiuiPBxqoBwcthQXq6ZdtgC0
-game Calc demo: https://asciinema.org/a/vWVoo7PWpOJufTT3IfgbAqMpn
-game GCD demo: https://asciinema.org/a/B4Ci62NCrCrnuxzio1Cl3sKyQ
-game Progression demo: https://asciinema.org/a/CVpApHf6cAOrn2lrZyd8soDMZ
-game Prime demo: https://asciinema.org/a/zI6n53pc5HXv236wl1EaUceZE
+[Game Even demo] (https://asciinema.org/a/HqiuiPBxqoBwcthQXq6ZdtgC0)
+[Game Calc demo] (https://asciinema.org/a/vWVoo7PWpOJufTT3IfgbAqMpn)
+[Game GCD demo] (https://asciinema.org/a/B4Ci62NCrCrnuxzio1Cl3sKyQ)
+[Game Progression demo] (https://asciinema.org/a/CVpApHf6cAOrn2lrZyd8soDMZ)
+[Game Prime demo] (https://asciinema.org/a/zI6n53pc5HXv236wl1EaUceZE)
