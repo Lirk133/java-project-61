@@ -1,11 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
-
 public class App {
     public static void main(String[] args) {
 
@@ -23,28 +17,8 @@ public class App {
 
         String choiceGame = Engine.scannerString();
 
-        switch (choiceGame) {
-            case "1":
-                Cli.startGame();
-                break;
-            case "2":
-                Even.gameEven();
-                break;
-            case "3":
-                Calc.gameCalc();
-                break;
-            case "4":
-                GCD.gameGCD();
-                break;
-            case "5":
-                Progression.gameProgression();
-                break;
-            case "6":
-                Prime.gamePrime();
-                break;
-            default:
-                System.exit(0);
-                break;
-        }
+        Engine.gamesRounds(choiceGame);
+
     }
 }
+

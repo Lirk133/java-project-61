@@ -1,49 +1,48 @@
 package hexlet.code;
 
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+
 import java.util.Scanner;
 import java.util.Random;
 
 public class Engine {
 
-    private static int round = 3;
-    private static int randomMaxNumber = 100;
-    private static int randomMaxSigns = 3;
-    private static int numberLast = 10;
-    private static int numberFirstStep1 = 2;
-    private static int numberFirstStep2 = 0;
-    private static int randomFirstNumber = 20;
-    private static int massiveLength = 10;
-
-    public static int getRound() {
-        return round;
-    }
-
-    public static int getRandomMaxNumber() {
-        return randomMaxNumber;
-    }
-
-    public static int getRandomMaxSigns() {
-        return randomMaxSigns;
-    }
-
-    public static int getNumberLast() {
-        return numberLast;
-    }
-
-    public static int getNumberFirstStep1() {
-        return numberFirstStep1;
-    }
-
-    public static int getNumberFirstStep2() {
-        return numberFirstStep2;
-    }
-
-    public static int getRandomFirstNumber() {
-        return randomFirstNumber;
-    }
-
-    public static int getMassiveLength() {
-        return massiveLength;
+    //этап с раундами
+    public static void gamesRounds(String game) {
+        int rounds = GameConfig.getMaxRounds();
+        boolean gameIsStarting = true;
+        while (rounds != 0) {
+            switch (game) {
+                case "1":
+                    Cli.startGame();
+                    return;
+                case "2":
+                    Even.gameEven(gameIsStarting);
+                    break;
+                case "3":
+                    Calc.gameCalc(gameIsStarting);
+                    break;
+                case "4":
+                    GCD.gameGCD(gameIsStarting);
+                    break;
+                case "5":
+                    Progression.gameProgression(gameIsStarting);
+                    break;
+                case "6":
+                    Prime.gamePrime(gameIsStarting);
+                    break;
+                default:
+                    System.exit(0);
+                    break;
+            }
+            rounds--;
+            gameIsStarting = false;
+        }
+        winner();
     }
 
     //упрощённый сканер текста для быстрого написания
@@ -85,15 +84,14 @@ public class Engine {
     }
 
     //метод проверки вопроса и ответа
-    public static boolean isCorrectly(String answer, String correctly) {
+    public static void isCorrectly(String answer, String correctly) {
         boolean isCorrectly = answer.equals(correctly);
-        if (isCorrectly) {
-            System.out.println("Correct!");
-            return true;
+        if (!isCorrectly) {
+            System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctly);
+            System.out.printf("Let's try again, %s!\n", Cli.getNameGamer());
+            System.exit(0);
         }
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctly);
-        System.out.printf("Let's try again, %s!\n", Cli.getNameGamer());
-        return false;
+        System.out.println("Correct!");
     }
 
     //победа игрока
