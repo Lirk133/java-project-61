@@ -12,7 +12,7 @@ public class Cli {
         System.out.print("May I have your name? ");
 
         //задаётся имя игрока и запоминается на постоянку
-        nameGamer = Engine.scannerString();
+        nameGamer = Utils.scannerString();
         System.out.println("Hello, " + nameGamer + "!");
     }
 

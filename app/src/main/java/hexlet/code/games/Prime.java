@@ -3,26 +3,47 @@ package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.GameConfig;
+import hexlet.code.Utils;
 
 public class Prime {
 
-    public static void gamePrime(boolean starting) {
+    public static void gamePrime(String[] answers, String[] questions, int rounds) {
+
         //приветствие и объяснение правил
-        if (starting) {
-            Cli.startGame();
-            System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Cli.startGame();
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+
+        //создаём вопросы и ответы
+        for (int i = 0; i < rounds; i++) {
+            createQuestions(answers, questions, i);
         }
 
-        //задаём случайные шаг для прогрессии
-        int number = Engine.random(GameConfig.getRandomMaxNumber());
-        //определяем является ли число простым
-        String correctly = Engine.primeCheck(number);
-        //создаём строку для вопроса
-        String question = Integer.toString(number);
-        //задаём вопрос и получаем ответ
-        String answer = Engine.question(question);
+        //Запускаем основную игру, передавая туда наши вопросы и ответы
+        Engine.gameRounds(questions, answers);
+    }
 
-        //проверяем ответ
-        Engine.isCorrectly(answer, correctly);
+    //метод создания вопроса и ответа
+    private static void createQuestions(String[] answers, String[] questions, int round) {
+        //задаём случайные шаг для прогрессии
+        int number = Utils.random(GameConfig.getRandomMaxNumber());
+        //определяем является ли число простым
+        answers[round] = primeCheck(number);
+        //создаём строку для вопроса
+        questions[round] = Integer.toString(number);
+
+    }
+
+    //метод проверки примитивного числа
+    private static String primeCheck(int number) {
+        String result = "yes";
+        int numberSecond = 2;
+        while (numberSecond < number) {
+            if (number % numberSecond == 0) {
+                result = "no";
+                break;
+            }
+            numberSecond++;
+        }
+        return result;
     }
 }
