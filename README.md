@@ -11,16 +11,16 @@
 
 
 ## Игра "чётное/нечётное"
-[Game Even demo] (https://asciinema.org/a/HqiuiPBxqoBwcthQXq6ZdtgC0)
+[Game Even demo](https://asciinema.org/a/HqiuiPBxqoBwcthQXq6ZdtgC0)
 
 ## Игра "калькулятор"
-[Game Calc demo] (https://asciinema.org/a/vWVoo7PWpOJufTT3IfgbAqMpn)
+[Game Calc demo](https://asciinema.org/a/vWVoo7PWpOJufTT3IfgbAqMpn)
 
 ## Игра "наибольший общий делитель"
-[Game GCD demo] (https://asciinema.org/a/B4Ci62NCrCrnuxzio1Cl3sKyQ)
+[Game GCD demo](https://asciinema.org/a/B4Ci62NCrCrnuxzio1Cl3sKyQ)
 
 ## Игра "прогрессия"
-[Game Progression demo] (https://asciinema.org/a/CVpApHf6cAOrn2lrZyd8soDMZ)
+[Game Progression demo](https://asciinema.org/a/CVpApHf6cAOrn2lrZyd8soDMZ)
 
 ## Игра "примитивное число"
-[Game Prime demo] (https://asciinema.org/a/zI6n53pc5HXv236wl1EaUceZE)
+[Game Prime demo](https://asciinema.org/a/zI6n53pc5HXv236wl1EaUceZE)
