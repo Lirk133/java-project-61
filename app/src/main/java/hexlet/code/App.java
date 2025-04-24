@@ -23,30 +23,25 @@ public class App {
 
         String choiceGame = Utils.scannerString();
 
-        //создаём массивы с вопросами и ответами
-        int rounds = GameConfig.getMaxRounds();
-        String[] questions = new String[rounds];
-        String[] answers = new String[rounds];
-
         //запускаем выбранную игру
         switch (choiceGame) {
             case "1":
                 Cli.startGame();
                 return;
             case "2":
-                Even.gameEven(answers, questions, rounds);
+                Even.gameEven();
                 break;
             case "3":
-                Calc.gameCalc(answers, questions, rounds);
+                Calc.gameCalc();
                 break;
             case "4":
-                GCD.gameGCD(answers, questions, rounds);
+                GCD.gameGCD();
                 break;
             case "5":
-                Progression.gameProgression(answers, questions, rounds);
+                Progression.gameProgression();
                 break;
             case "6":
-                Prime.gamePrime(answers, questions, rounds);
+                Prime.gamePrime();
                 break;
             default:
                 System.exit(0);

@@ -1,17 +1,26 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.GameConfig;
 import hexlet.code.Utils;
 
 public class Progression {
 
-    public static void gameProgression(String[] answers, String[] questions, int rounds) {
+    private static final int NUMBER_LAST = 10;
+    private static final int NUMBER_FIRST_STEP_ONE = 2;
+    private static final int NUMBER_FIRST_STEP_TWO = 0;
+    private static final int RANDOM_FIRST_NUMBER = 20;
+    private static final int MASSIVE_LENGTH = 10;
+
+    public static void gameProgression() {
+
+        //создаём массивы с вопросами и ответами
+        int rounds = GameConfig.getMaxRounds();
+        String[] questions = new String[rounds];
+        String[] answers = new String[rounds];
 
         //приветствие и объяснение правил
-        Cli.startGame();
-        System.out.println("What number is missing in the progression?");
+        Engine.gameGreeting("What number is missing in the progression?");
 
         for (int i = 0; i < rounds; i++) {
             createQuestions(answers, questions, i);
@@ -26,13 +35,13 @@ public class Progression {
 
     private static void createQuestions(String[] answers, String[] questions, int round) {
         //задаём случайные шаг для прогрессии
-        int step = Utils.random(GameConfig.getNumberFirstStepOne(), GameConfig.getNumberLast());
+        int step = Utils.random(NUMBER_FIRST_STEP_ONE, NUMBER_LAST);
         //запоминаем какую позицию в прогрессии скрыть
-        int hiddenNumber = Utils.random(GameConfig.getNumberFirstStepTwo(), GameConfig.getNumberLast());
+        int hiddenNumber = Utils.random(NUMBER_FIRST_STEP_TWO, NUMBER_LAST);
         //определяем первое число в прогрессии
-        int firstNumber = Utils.random(GameConfig.getRandomFirstNumber());
+        int firstNumber = Utils.random(RANDOM_FIRST_NUMBER);
         //создаём массив прогрессии
-        int[] numbers = new int[GameConfig.getMassiveLength()];
+        int[] numbers = new int[MASSIVE_LENGTH];
         massiveProgression(numbers, firstNumber, step);
 
         //определяем скрытое число в строку

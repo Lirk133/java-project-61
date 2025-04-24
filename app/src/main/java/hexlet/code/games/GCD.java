@@ -1,18 +1,23 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.GameConfig;
 import hexlet.code.Utils;
 
 public class GCD {
 
+    private static final int RANDOM_MAX_NUMBER = 100;
+
     //Игра наибольший общий делитель
-    public static void gameGCD(String[] answers, String[] questions, int rounds) {
+    public static void gameGCD() {
+
+        //создаём массивы с вопросами и ответами
+        int rounds = GameConfig.getMaxRounds();
+        String[] questions = new String[rounds];
+        String[] answers = new String[rounds];
 
         //приветствие и объяснение правил
-        Cli.startGame();
-        System.out.println("Find the greatest common divisor of given numbers.");
+        Engine.gameGreeting("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < rounds; i++) {
             createQuestions(answers, questions, i);
@@ -24,8 +29,8 @@ public class GCD {
 
     private static void createQuestions(String[] answers, String[] questions, int round) {
         //задаём случайные два числа
-        int number1 = Utils.random(GameConfig.getRandomMaxNumber());
-        int number2 = Utils.random(GameConfig.getRandomMaxNumber());
+        int number1 = Utils.random(RANDOM_MAX_NUMBER);
+        int number2 = Utils.random(RANDOM_MAX_NUMBER);
         //определяем наибольший общий делитель
         answers[round] = Integer.toString(gcd(number1, number2));
         //создаём строку для вопроса

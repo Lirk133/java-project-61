@@ -1,17 +1,22 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.GameConfig;
 import hexlet.code.Utils;
 
 public class Prime {
 
-    public static void gamePrime(String[] answers, String[] questions, int rounds) {
+    private static final int RANDOM_MAX_NUMBER = 100;
+
+    public static void gamePrime() {
+
+        //создаём массивы с вопросами и ответами
+        int rounds = GameConfig.getMaxRounds();
+        String[] questions = new String[rounds];
+        String[] answers = new String[rounds];
 
         //приветствие и объяснение правил
-        Cli.startGame();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Engine.gameGreeting("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         //создаём вопросы и ответы
         for (int i = 0; i < rounds; i++) {
@@ -25,7 +30,7 @@ public class Prime {
     //метод создания вопроса и ответа
     private static void createQuestions(String[] answers, String[] questions, int round) {
         //задаём случайные шаг для прогрессии
-        int number = Utils.random(GameConfig.getRandomMaxNumber());
+        int number = Utils.random(RANDOM_MAX_NUMBER);
         //определяем является ли число простым
         answers[round] = primeCheck(number);
         //создаём строку для вопроса

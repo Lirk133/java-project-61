@@ -1,17 +1,23 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.GameConfig;
 import hexlet.code.Utils;
 
 public class Calc {
 
-    public static void gameCalc(String[] answers, String[] questions, int rounds) {
+    private static final int RANDOM_MAX_NUMBER = 100;
+    private static final int RANDOM_MAX_SIGNS = 3;
+
+    public static void gameCalc() {
+
+        //создаём массивы с вопросами и ответами
+        int rounds = GameConfig.getMaxRounds();
+        String[] questions = new String[rounds];
+        String[] answers = new String[rounds];
 
         //приветствие и объяснение правил
-        Cli.startGame();
-        System.out.println("What is the result of the expression?");
+        Engine.gameGreeting("What is the result of the expression?");
 
         for (int i = 0; i < rounds; i++) {
             createQuestions(answers, questions, i);
@@ -23,12 +29,12 @@ public class Calc {
 
     private static void createQuestions(String[] answers, String[] questions, int round) {
         //задаём случайные два числа
-        int number1 = Utils.random(GameConfig.getRandomMaxNumber());
-        int number2 = Utils.random(GameConfig.getRandomMaxNumber());
+        int number1 = Utils.random(RANDOM_MAX_NUMBER);
+        int number2 = Utils.random(RANDOM_MAX_NUMBER);
 
         //задаём случайный математический знак и делаем верный подсчёт
         String mathSign = "";
-        answers[round] = switch (Integer.toString(Utils.random(GameConfig.getRandomMaxSigns()))) {
+        answers[round] = switch (Integer.toString(Utils.random(RANDOM_MAX_SIGNS))) {
             case "1" -> {
                 mathSign = "+";
                 yield Integer.toString(number1 + number2);

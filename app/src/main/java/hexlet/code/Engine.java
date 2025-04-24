@@ -2,6 +2,20 @@ package hexlet.code;
 
 public class Engine {
 
+    private static String nameGamer;
+
+    //метод приветствия игрока
+    public static void gameGreeting(String greeting) {
+        System.out.println();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+
+        //задаётся имя игрока и запоминается на постоянку
+        nameGamer = Utils.scannerString();
+        System.out.println("Hello, " + nameGamer + "!");
+        System.out.println(greeting);
+    }
+
     //этап с раундами
     public static void gameRounds(String[] questions, String[] answers) {
         int rounds = GameConfig.getMaxRounds();
@@ -23,7 +37,7 @@ public class Engine {
         boolean isCorrectly = answer.equals(correctly);
         if (!isCorrectly) {
             System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctly);
-            System.out.printf("Let's try again, %s!\n", Cli.getNameGamer());
+            System.out.printf("Let's try again, %s!\n", nameGamer);
             System.exit(0);
         }
         System.out.println("Correct!");
@@ -31,7 +45,7 @@ public class Engine {
 
     //победа игрока
     public static void winner() {
-        System.out.printf("Congratulations, %s!\n", Cli.getNameGamer());
+        System.out.printf("Congratulations, %s!\n", nameGamer);
     }
 
 }

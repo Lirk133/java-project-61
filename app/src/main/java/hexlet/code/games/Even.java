@@ -1,23 +1,28 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.GameConfig;
 import hexlet.code.Utils;
 
 public class Even {
 
+    private static final int RANDOM_MAX_NUMBER = 100;
+
     //Игра в четные числа
-    public static void gameEven(String[] answers, String[] questions, int rounds) {
+    public static void gameEven() {
+
+        //создаём массивы с вопросами и ответами
+        int rounds = GameConfig.getMaxRounds();
+        String[] questions = new String[rounds];
+        String[] answers = new String[rounds];
 
         //приветствие и объяснение правил
-        Cli.startGame();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        Engine.gameGreeting("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         //Создаём вопросы
         for (int i = 0; i < rounds; i++) {
             //генерация случайного числа и определение его как чётное или не чётное
-            int number = Utils.random(GameConfig.getRandomMaxNumber());
+            int number = Utils.random(RANDOM_MAX_NUMBER);
             questions[i] = Integer.toString(number);
             answers[i] = numberCheck(number);
         }
