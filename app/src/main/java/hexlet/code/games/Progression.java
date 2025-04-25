@@ -16,39 +16,32 @@ public class Progression {
 
         //создаём массивы с вопросами и ответами
         int rounds = GameConfig.getMaxRounds();
-        String[] questions = new String[rounds];
-        String[] answers = new String[rounds];
-
-        //приветствие и объяснение правил
-        Engine.gameGreeting("What number is missing in the progression?");
+        String[][] questAnswers = new String[2][rounds];
+        String greeting = "What number is missing in the progression?";
 
         for (int i = 0; i < rounds; i++) {
-            createQuestions(answers, questions, i);
+            //задаём случайные шаг для прогрессии
+            int step = Utils.random(NUMBER_FIRST_STEP_ONE, NUMBER_LAST);
+            //запоминаем какую позицию в прогрессии скрыть
+            int hiddenNumber = Utils.random(NUMBER_FIRST_STEP_TWO, NUMBER_LAST);
+            //определяем первое число в прогрессии
+            int firstNumber = Utils.random(RANDOM_FIRST_NUMBER);
+            //создаём массив прогрессии
+            int[] numbers = new int[MASSIVE_LENGTH];
+            massiveProgression(numbers, firstNumber, step);
+
+            //определяем скрытое число в строку
+            questAnswers[1][i] = Integer.toString(numbers[hiddenNumber]);
+
+            //создаём строку для вопроса
+            questAnswers[0][i] = massiveInStringProgression(numbers, hiddenNumber);
         }
 
         //Запускаем основную игру, передавая туда наши вопросы и ответы
-        Engine.gameRounds(questions, answers);
+        Engine.gameStart(greeting, questAnswers);
 
 
 
-    }
-
-    private static void createQuestions(String[] answers, String[] questions, int round) {
-        //задаём случайные шаг для прогрессии
-        int step = Utils.random(NUMBER_FIRST_STEP_ONE, NUMBER_LAST);
-        //запоминаем какую позицию в прогрессии скрыть
-        int hiddenNumber = Utils.random(NUMBER_FIRST_STEP_TWO, NUMBER_LAST);
-        //определяем первое число в прогрессии
-        int firstNumber = Utils.random(RANDOM_FIRST_NUMBER);
-        //создаём массив прогрессии
-        int[] numbers = new int[MASSIVE_LENGTH];
-        massiveProgression(numbers, firstNumber, step);
-
-        //определяем скрытое число в строку
-        answers[round] = Integer.toString(numbers[hiddenNumber]);
-
-        //создаём строку для вопроса
-        questions[round] = massiveInStringProgression(numbers, hiddenNumber);
     }
 
     //задаёт в массиве элементы, начиная с первого и с определённым шагом

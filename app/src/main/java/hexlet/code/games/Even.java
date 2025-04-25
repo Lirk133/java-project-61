@@ -13,30 +13,18 @@ public class Even {
 
         //создаём массивы с вопросами и ответами
         int rounds = GameConfig.getMaxRounds();
-        String[] questions = new String[rounds];
-        String[] answers = new String[rounds];
-
-        //приветствие и объяснение правил
-        Engine.gameGreeting("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String[][] questAnswers = new String[2][rounds];
+        String greeting = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         //Создаём вопросы
         for (int i = 0; i < rounds; i++) {
             //генерация случайного числа и определение его как чётное или не чётное
             int number = Utils.random(RANDOM_MAX_NUMBER);
-            questions[i] = Integer.toString(number);
-            answers[i] = numberCheck(number);
+            questAnswers[0][i] = Integer.toString(number);
+            questAnswers[1][i] = number % 2 == 0 ? "yes" : "no";
         }
 
         //Запускаем основную игру, передавая туда наши вопросы и ответы
-        Engine.gameRounds(questions, answers);
+        Engine.gameStart(greeting, questAnswers);
     }
-
-    //метод проверки ответа (yes - верный ответ, no - не верный ответ)
-    private static String numberCheck(int number) {
-        if (number % 2 == 0) {
-            return "yes";
-        }
-        return "no";
-    }
-
 }

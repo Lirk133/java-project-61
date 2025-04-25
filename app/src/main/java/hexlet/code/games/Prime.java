@@ -12,30 +12,18 @@ public class Prime {
 
         //создаём массивы с вопросами и ответами
         int rounds = GameConfig.getMaxRounds();
-        String[] questions = new String[rounds];
-        String[] answers = new String[rounds];
-
-        //приветствие и объяснение правил
-        Engine.gameGreeting("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String[][] questAnswers = new String[2][rounds];
+        String greeting = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         //создаём вопросы и ответы
         for (int i = 0; i < rounds; i++) {
-            createQuestions(answers, questions, i);
+            int number = Utils.random(RANDOM_MAX_NUMBER);
+            questAnswers[0][i] = Integer.toString(number);
+            questAnswers[1][i] = primeCheck(number);
         }
 
         //Запускаем основную игру, передавая туда наши вопросы и ответы
-        Engine.gameRounds(questions, answers);
-    }
-
-    //метод создания вопроса и ответа
-    private static void createQuestions(String[] answers, String[] questions, int round) {
-        //задаём случайные шаг для прогрессии
-        int number = Utils.random(RANDOM_MAX_NUMBER);
-        //определяем является ли число простым
-        answers[round] = primeCheck(number);
-        //создаём строку для вопроса
-        questions[round] = Integer.toString(number);
-
+        Engine.gameStart(greeting, questAnswers);
     }
 
     //метод проверки примитивного числа

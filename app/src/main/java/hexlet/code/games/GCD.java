@@ -13,28 +13,21 @@ public class GCD {
 
         //создаём массивы с вопросами и ответами
         int rounds = GameConfig.getMaxRounds();
-        String[] questions = new String[rounds];
-        String[] answers = new String[rounds];
-
-        //приветствие и объяснение правил
-        Engine.gameGreeting("Find the greatest common divisor of given numbers.");
+        String[][] questAnswers = new String[2][rounds];
+        String greeting = "Find the greatest common divisor of given numbers.";
 
         for (int i = 0; i < rounds; i++) {
-            createQuestions(answers, questions, i);
+            //задаём случайные два числа
+            int number1 = Utils.random(RANDOM_MAX_NUMBER);
+            int number2 = Utils.random(RANDOM_MAX_NUMBER);
+            //определяем наибольший общий делитель
+            questAnswers[1][i] = Integer.toString(gcd(number1, number2));
+            //создаём строку для вопроса
+            questAnswers[0][i] = number1 + " " + number2;
         }
 
         //Запускаем основную игру, передавая туда наши вопросы и ответы
-        Engine.gameRounds(questions, answers);
-    }
-
-    private static void createQuestions(String[] answers, String[] questions, int round) {
-        //задаём случайные два числа
-        int number1 = Utils.random(RANDOM_MAX_NUMBER);
-        int number2 = Utils.random(RANDOM_MAX_NUMBER);
-        //определяем наибольший общий делитель
-        answers[round] = Integer.toString(gcd(number1, number2));
-        //создаём строку для вопроса
-        questions[round] = number1 + " " + number2;
+        Engine.gameStart(greeting, questAnswers);
     }
 
     //метод определяет какое из двух чисел большее и запускает логику наибольшего общего делителя
