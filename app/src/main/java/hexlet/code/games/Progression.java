@@ -4,6 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.GameConfig;
 import hexlet.code.Utils;
 
+import java.util.Arrays;
+
 public class Progression {
 
     private static final int NUMBER_LAST = 10;
@@ -16,7 +18,7 @@ public class Progression {
 
         //создаём массивы с вопросами и ответами
         int rounds = GameConfig.getMaxRounds();
-        String[][] questAnswers = new String[2][rounds];
+        String[][] questAnswers = new String[rounds][2];
         String greeting = "What number is missing in the progression?";
 
         for (int i = 0; i < rounds; i++) {
@@ -27,14 +29,13 @@ public class Progression {
             //определяем первое число в прогрессии
             int firstNumber = Utils.random(RANDOM_FIRST_NUMBER);
             //создаём массив прогрессии
-            int[] numbers = new int[MASSIVE_LENGTH];
-            massiveProgression(numbers, firstNumber, step);
+            int[] numbers = Arrays.copyOf(massiveProgression(firstNumber, step), MASSIVE_LENGTH);
 
             //определяем скрытое число в строку
-            questAnswers[1][i] = Integer.toString(numbers[hiddenNumber]);
+            questAnswers[i][1] = Integer.toString(numbers[hiddenNumber]);
 
             //создаём строку для вопроса
-            questAnswers[0][i] = massiveInStringProgression(numbers, hiddenNumber);
+            questAnswers[i][0] = massiveInStringProgression(numbers, hiddenNumber);
         }
 
         //Запускаем основную игру, передавая туда наши вопросы и ответы
@@ -45,11 +46,13 @@ public class Progression {
     }
 
     //задаёт в массиве элементы, начиная с первого и с определённым шагом
-    private static void massiveProgression(int[] numbers, int first, int step) {
+    private static int[] massiveProgression(int first, int step) {
+        int[] numbers = new int[MASSIVE_LENGTH];
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = first;
             first += step;
         }
+        return numbers;
     }
 
     //преобразует массив в строку, скрывая определённую позицию

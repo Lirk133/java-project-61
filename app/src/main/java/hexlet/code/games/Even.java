@@ -13,15 +13,15 @@ public class Even {
 
         //создаём массивы с вопросами и ответами
         int rounds = GameConfig.getMaxRounds();
-        String[][] questAnswers = new String[2][rounds];
+        String[][] questAnswers = new String[rounds][2];
         String greeting = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         //Создаём вопросы
         for (int i = 0; i < rounds; i++) {
             //генерация случайного числа и определение его как чётное или не чётное
             int number = Utils.random(RANDOM_MAX_NUMBER);
-            questAnswers[0][i] = Integer.toString(number);
-            questAnswers[1][i] = number % 2 == 0 ? "yes" : "no";
+            questAnswers[i][0] = Integer.toString(number);
+            questAnswers[i][1] = number % 2 == 0 ? "yes" : "no";
         }
 
         //Запускаем основную игру, передавая туда наши вопросы и ответы

@@ -12,14 +12,14 @@ public class Prime {
 
         //создаём массивы с вопросами и ответами
         int rounds = GameConfig.getMaxRounds();
-        String[][] questAnswers = new String[2][rounds];
+        String[][] questAnswers = new String[rounds][2];
         String greeting = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         //создаём вопросы и ответы
         for (int i = 0; i < rounds; i++) {
             int number = Utils.random(RANDOM_MAX_NUMBER);
-            questAnswers[0][i] = Integer.toString(number);
-            questAnswers[1][i] = primeCheck(number);
+            questAnswers[i][0] = Integer.toString(number);
+            questAnswers[i][1] = primeCheck(number) ? "yes" : "no";
         }
 
         //Запускаем основную игру, передавая туда наши вопросы и ответы
@@ -27,16 +27,14 @@ public class Prime {
     }
 
     //метод проверки примитивного числа
-    private static String primeCheck(int number) {
-        String result = "yes";
+    private static boolean primeCheck(int number) {
         int numberSecond = 2;
         while (numberSecond < number) {
             if (number % numberSecond == 0) {
-                result = "no";
-                break;
+                return false;
             }
             numberSecond++;
         }
-        return result;
+        return true;
     }
 }

@@ -18,13 +18,13 @@ public class Engine {
 
         int rounds = GameConfig.getMaxRounds();
         for (int i = 0; i < rounds; i++) {
-            System.out.print("Question: " + questAnswers[0][i] + "\nYour answer: ");
+            System.out.print("Question: " + questAnswers[i][0] + "\nYour answer: ");
             String playerAnswer = Utils.scannerString();
-            if (playerAnswer.equals(questAnswers[1][i])) {
+            if (playerAnswer.equals(questAnswers[i][1])) {
                 System.out.println("Correct!");
             } else {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n",
-                        playerAnswer, questAnswers[1][i]);
+                        playerAnswer, questAnswers[i][1]);
                 System.out.printf("Let's try again, %s!\n", nameGamer);
                 System.exit(0);
             }
