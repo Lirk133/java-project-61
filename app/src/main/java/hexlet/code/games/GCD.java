@@ -44,7 +44,7 @@ public class GCD {
     //логика нахождения наибольшего общего делителя
     private static int gcdLogic(int number1, int number2) {
         int result = 0;
-        int isGCD = number1 / 2;
+        int isGCD = number1 / 2 == 0 ? 1 : number1 / 2;
         while (isGCD != 0 && result == 0) {
             if (number1 % isGCD == 0 && number2 % isGCD == 0) {
                 result = isGCD;
